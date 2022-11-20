@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "I dont like youtube shorts",
+  "description": "I dont like youtube shorts extension",
+  "version": "0.1.0",
+  "icons": {
+    "16": "icons/cool.png",
+    "32": "icons/cool.png",
+    "48": "icons/cool.png",
+    "128": "icons/cool.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": "icons/cool.png"
+  },
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
