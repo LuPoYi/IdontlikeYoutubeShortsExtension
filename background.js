@@ -1,6 +1,6 @@
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.url) {
-    const [host, videoId] = changeInfo.url.split("/shorts/")
+chrome.tabs.onUpdated.addListener((tabId, { status }, { url }) => {
+  if (status === "complete" && url) {
+    const [host, videoId] = url.split("/shorts/")
 
     if (host === "https://www.youtube.com") {
       chrome.tabs.sendMessage(tabId, {
