@@ -19,7 +19,10 @@
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
-      "matches": ["https://www.youtube.com/*"]
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://booking.tigerairtw.com/*"
+      ]
     }
   ]
 }
